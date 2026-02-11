@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function About() {
@@ -9,7 +11,13 @@ export default function About() {
         <div className="flex flex-row items-center">
 
           {/* IMAGE — LEFT (DR. MAYA) */}
-          <div className="shrink-0">
+          <motion.div
+          initial={{ x: -120, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+           transition={{ duration: 0.9, ease: "easeOut" }}
+           viewport={{ once: true }}
+            className="shrink-0"
+          >
             <div className="relative w-[520px] h-[640px]">
               <Image
                 src="/images/maya.png"
@@ -19,7 +27,7 @@ export default function About() {
                 priority
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* SPACE */}
           <div className="w-[140px]" />

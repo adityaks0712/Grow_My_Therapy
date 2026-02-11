@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Support() {
   return (
@@ -71,17 +73,24 @@ export default function Support() {
         </div>
 
         {/* IMAGE — RIGHT (BIGGER) */}
-        <div className="shrink-0">
-          <div className="relative w-[620px] h-[760px]">
-            <Image
-              src="/images/support.png"
-              alt="Adult sitting quietly near the ocean, reflecting"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
+<motion.div
+  initial={{ x: 150, opacity: 0 }}
+  whileInView={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.9, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="shrink-0"
+>
+  <div className="relative w-[620px] h-[760px]">
+    <Image
+      src="/images/support.png"
+      alt="Adult sitting quietly near the ocean, reflecting"
+      fill
+      className="object-cover"
+      priority
+    />
+  </div>
+</motion.div>
+
 
       </div>
     </section>

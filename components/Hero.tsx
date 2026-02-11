@@ -1,4 +1,7 @@
+
 import Image from "next/image";
+
+
 
 export default function Hero() {
   return (
@@ -7,19 +10,16 @@ export default function Hero() {
 
         {/* LEFT–RIGHT LAYOUT */}
         <div className="flex flex-row items-center">
-
-          {/* IMAGE — LEFT (BIGGER, SQUARE) */}
-          <div className="shrink-0">
             <div className="relative w-[640px] h-[640px]">
               <Image
-                src="/images/santa-monica.jpg"
-                alt="Calm coastal scenery in Santa Monica, California"
-                fill
-                className="object-cover"
-                priority
+              src="/images/santa-monica.jpg"
+              alt="Calm coastal scenery in Santa Monica, California"
+              fill
+              className="object-cover"
+              priority
               />
             </div>
-          </div>
+         
 
           {/* SPACE */}
           <div className="w-[140px]" />

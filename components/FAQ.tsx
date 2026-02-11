@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -37,17 +38,23 @@ export default function FAQ() {
         <div className="flex flex-row items-start">
 
           {/* IMAGE — LEFT */}
-          <div className="shrink-0">
-            <div className="relative w-[520px] h-[620px] overflow-hidden">
-              <Image
-                src="/images/office1.jpeg"
-                alt="Soft ocean tones and calming textures"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
+<motion.div
+  initial={{ x: -150, opacity: 0 }}
+  whileInView={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.9, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="shrink-0"
+>
+  <div className="relative w-[520px] h-[620px] overflow-hidden">
+    <Image
+      src="/images/office1.jpeg"
+      alt="Soft ocean tones and calming textures"
+      fill
+      className="object-cover"
+      priority
+    />
+  </div>
+</motion.div>
 
           {/* SPACE */}
           <div className="w-[160px]" />

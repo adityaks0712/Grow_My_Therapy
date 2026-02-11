@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function OurOffice() {
   return (
@@ -59,26 +62,42 @@ export default function OurOffice() {
 
           </div>
 
-          {/* RIGHT COLUMN — IMAGES */}
           <div className="w-1/2 flex flex-col gap-10">
-            <div className="relative w-full h-[500px]">
-              <Image
-                src="/images/office2.jpeg"
-                alt="Therapy office"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="relative w-full h-[250px]">
-              <Image
-                src="/images/office3.jpg"
-                alt="Office detail"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+
+  {/* IMAGE 1 — From TOP */}
+  <motion.div
+    initial={{ y: -120, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.9, ease: "easeOut" }}
+    viewport={{ once: true }}
+    className="relative w-full h-[500px]"
+  >
+    <Image
+      src="/images/office2.jpeg"
+      alt="Therapy office"
+      fill
+      className="object-cover"
+      priority
+    />
+  </motion.div>
+
+  {/* IMAGE 2 — From BOTTOM */}
+  <motion.div
+    initial={{ y: 120, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+    viewport={{ once: true }}
+    className="relative w-full h-[250px]"
+  >
+    <Image
+      src="/images/office3.jpg"
+      alt="Office detail"
+      fill
+      className="object-cover"
+    />
+  </motion.div>
+
+</div>
 
         </div>
       </div>

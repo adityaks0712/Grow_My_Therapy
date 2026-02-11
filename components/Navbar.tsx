@@ -4,8 +4,8 @@ export default function Navbar() {
       <div className="w-full max-w-7xl mx-auto px-10 flex justify-between items-center">
 
         {/* Brand — Now even bigger */}
-        <span className="text-[40px] font-bold tracking-tight text-[#ffffff]">
-          Anxiety Therapy
+        <span className="text-[36px] font-bold tracking-tight text-[#ffffff]">
+          Therapy for Adults
         </span>
 
         {/* Nav Links — Added large gap and specific white color */}
