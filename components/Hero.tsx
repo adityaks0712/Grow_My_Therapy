@@ -1,68 +1,60 @@
-
 import Image from "next/image";
-
-
 
 export default function Hero() {
   return (
-    <section className="bg-bg w-full">
-      <div className="max-w-7xl mx-auto px-8 py-[100px]">
+    <section className="bg-[#F2EFE9] w-full">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-[140px]">
 
-        {/* LEFT–RIGHT LAYOUT */}
-        <div className="flex flex-row items-center">
-            <div className="relative w-[640px] h-[640px]">
-              <Image
+        {/* LAYOUT */}
+        <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-24">
+
+          {/* IMAGE */}
+          <div className="relative w-full h-[420px] lg:w-[600px] lg:h-[600px] rounded-[6px] overflow-hidden shadow-sm">
+            <Image
               src="/images/santa-monica.jpg"
               alt="Calm coastal scenery in Santa Monica, California"
               fill
               className="object-cover"
               priority
-              />
-            </div>
-         
+            />
+          </div>
 
-          {/* SPACE */}
-          <div className="w-[140px]" />
+          {/* TEXT */}
+          <div className="max-w-xl text-center lg:text-left">
 
-          {/* TEXT — RIGHT */}
-          <div className="max-w-xl">
-            <h1 className="text-[60px] leading-[1.15] mb-8 text-ink">
+            <h1 className="text-3xl lg:text-[58px] leading-[1.15] mb-8 text-[#1f3a3a]">
               Anxiety, Trauma & Burnout Therapy for Adults in Santa Monica, CA
             </h1>
 
-            <p className="text-muted mb-24 text-[19px] leading-[1.85]">
-              In-person sessions in Santa Monica and telehealth across California.
+            <p className="text-[#6b6b6b] mb-12 text-base lg:text-[19px] leading-[1.8]">
+              In-person therapy in Santa Monica and secure telehealth sessions
+              available throughout California.
             </p>
+
+            {/* CTA — Inline for Better Flow */}
+            <a
+              href="#contact"
+              className="
+                inline-block
+                border-2 border-[#1f3a3a]
+                px-10 py-4
+                lg:px-14 lg:py-6
+                text-sm lg:text-lg
+                tracking-[0.15em]
+                uppercase
+                transition-all
+                duration-300
+                hover:bg-[#1f3a3a]
+                hover:text-white
+              "
+            >
+              Schedule a Consultation →
+            </a>
+
           </div>
-
         </div>
 
-      {/* CTA — CENTERED AND BIGGER */}
-        <div className="flex justify-center items-center mt-10">
-          <a
-            href="#contact"
-            className="
-              inline-block
-              border-2 border-ink
-              px-16 py-8
-              text-[24px]
-              font-medium
-              tracking-[0.2em]
-              text-ink
-              uppercase
-              transition-all
-              duration-300
-              hover:bg-ink hover:text-white
-            "
-          >
-            Schedule a Consultation →
-          </a>
-        </div>
       </div>
     </section>
   );
 }
-
-
-
-

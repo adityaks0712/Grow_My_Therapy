@@ -8,17 +8,17 @@ export default function OurOffice() {
     <section className="bg-[#F2F8F7] w-full py-32">
       <div className="max-w-7xl mx-auto px-12">
 
-        {/* MAIN LAYOUT ROW */}
+        {/* MAIN LAYOUT ROW (UNCHANGED) */}
         <div className="flex flex-row items-start gap-24">
 
           {/* LEFT COLUMN — TEXT + BUTTON */}
           <div className="w-1/2 max-w-xl flex flex-col items-start">
 
-            <h2 className="text-[56px] font-serif leading-[1.1] mb-12 text-[#1a2e2e]">
+            <h2 className="text-[56px] font-serif leading-[1.1] mb-10 text-[#1f3a3a]">
               A Calm Space for Healing
             </h2>
 
-            <div className="space-y-10 text-[#4a4a4a] text-[20px] leading-[1.9]">
+            <div className="space-y-8 text-[#5f5f5f] text-[20px] leading-[1.85]">
               <p>
                 Therapy takes place in a quiet, thoughtfully designed office in
                 Santa Monica, California. The space is intended to feel grounded,
@@ -39,65 +39,68 @@ export default function OurOffice() {
               </p>
             </div>
 
-            {/* BUTTON — Pushed further down for better white space */}
-       {/* BUTTON — Proper spacing & cleaner proportions */}
-       <div className="mt-20 pt-6">
-        <a
-        href="#location"
-        className="
-        inline-block
-        border-2 border-[#1a2e2e]
-        px-20 py-6
-        text-[22px]
-        font-semibold
-        tracking-[0.25em]
-       text-[#1a2e2e]
-       uppercase
-       transition-all
-       duration-300
-    ">
-    VISIT US →
-       </a>
-       </div>
+            {/* REFINED BUTTON */}
+            <div className="mt-20 pt-6">
+              <a
+                href="#location"
+                className="
+                  inline-block
+                  border-2 border-[#1f3a3a]
+                  px-16 py-5
+                  text-[18px]
+                  font-medium
+                  tracking-[0.2em]
+                  text-[#1f3a3a]
+                  uppercase
+                  transition-all
+                  duration-300
+                  hover:bg-[#1f3a3a]
+                  hover:text-white
+                "
+              >
+                VISIT US →
+              </a>
+            </div>
 
           </div>
 
+          {/* RIGHT COLUMN — IMAGES (UNCHANGED LAYOUT) */}
           <div className="w-1/2 flex flex-col gap-10">
 
-  {/* IMAGE 1 — From TOP */}
-  <motion.div
-    initial={{ y: -120, opacity: 0 }}
-    whileInView={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.9, ease: "easeOut" }}
-    viewport={{ once: true }}
-    className="relative w-full h-[500px]"
-  >
-    <Image
-      src="/images/office2.jpeg"
-      alt="Therapy office"
-      fill
-      className="object-cover"
-      priority
-    />
-  </motion.div>
+            {/* IMAGE 1 */}
+            <motion.div
+              initial={{ y: -120, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="relative w-full h-[500px] overflow-hidden rounded-[6px] shadow-sm"
+            >
+              <Image
+                src="/images/office2.jpeg"
+                alt="Therapy office"
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
 
-  {/* IMAGE 2 — From BOTTOM */}
-  <motion.div
-    initial={{ y: 120, opacity: 0 }}
-    whileInView={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-    viewport={{ once: true }}
-    className="relative w-full h-[250px]"
-  >
-    <Image
-      src="/images/office3.jpg"
-      alt="Office detail"
-      fill
-      className="object-cover"
-    />
-  </motion.div>
+            {/* IMAGE 2 */}
+            <motion.div
+              initial={{ y: 120, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+              viewport={{ once: true }}
+              className="relative w-full h-[250px] overflow-hidden rounded-[6px] shadow-sm"
+            >
+              <Image
+                src="/images/office3.jpg"
+                alt="Office detail"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
 
-</div>
+          </div>
 
         </div>
       </div>
