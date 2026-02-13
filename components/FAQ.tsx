@@ -31,42 +31,39 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#E6F2F1]">
-      <div className="max-w-7xl mx-auto px-8 py-[180px]">
+    <section className="bg-[#E6F2F1] py-[clamp(80px,10vw,160px)]">
+      <div className="max-w-7xl mx-auto px-[clamp(16px,4vw,48px)]">
 
-        {/* LEFT–RIGHT LAYOUT */}
-        <div className="flex flex-row items-start">
+        {/* ALWAYS SIDE-BY-SIDE */}
+        <div className="flex items-start gap-[clamp(24px,6vw,80px)]">
 
           {/* IMAGE — LEFT */}
-<motion.div
-  initial={{ x: -150, opacity: 0 }}
-  whileInView={{ x: 0, opacity: 1 }}
-  transition={{ duration: 0.9, ease: "easeOut" }}
-  viewport={{ once: true }}
-  className="shrink-0"
->
-  <div className="relative w-[520px] h-[620px] overflow-hidden">
-    <Image
-      src="/images/office1.jpeg"
-      alt="Soft ocean tones and calming textures"
-      fill
-      className="object-cover"
-      priority
-    />
-  </div>
-</motion.div>
-
-          {/* SPACE */}
-          <div className="w-[160px]" />
+          <motion.div
+            initial={{ x: -150, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="w-[45%] shrink-0"
+          >
+            <div className="relative w-full aspect-4/5 overflow-hidden rounded shadow-sm">
+              <Image
+                src="/images/office1.jpeg"
+                alt="Soft ocean tones and calming textures"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
 
           {/* TEXT — RIGHT */}
-          <div className="flex-1 max-w-2xl">
+          <div className="w-[55%]">
 
-            <h2 className="text-[56px] mb-16 text-ink leading-[1.1]">
+            <h2 className="text-[clamp(24px,4vw,56px)] mb-[clamp(24px,5vw,60px)] text-[#1a2e2e] leading-[1.1]">
               Frequently Asked Questions
             </h2>
 
-            <div className="flex flex-col">
+            <div>
 
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
@@ -74,33 +71,25 @@ export default function FAQ() {
                 return (
                   <div
                     key={faq.question}
-                    className="border-t border-ink/30 py-8"
+                    className="border-t border-[#1a2e2e]/30 py-[clamp(14px,2vw,28px)]"
                   >
-                    {/* QUESTION ROW */}
+                    {/* QUESTION */}
                     <button
-                      onClick={() =>
-                        setOpenIndex(isOpen ? null : index)
-                      }
-                      className="
-                        w-full
-                        flex
-                        justify-between
-                        items-center
-                        text-left
-                      "
+                      onClick={() => setOpenIndex(isOpen ? null : index)}
+                      className="w-full flex justify-between items-center text-left"
                     >
-                      <span className="text-[24px] text-ink leading-[1.4]">
+                      <span className="text-[clamp(14px,1.8vw,24px)] text-[#1a2e2e] leading-[1.4]">
                         {faq.question}
                       </span>
 
-                      <span className="text-[32px] text-ink">
+                      <span className="text-[clamp(16px,2vw,32px)] text-[#1a2e2e]">
                         {isOpen ? "−" : "+"}
                       </span>
                     </button>
 
                     {/* ANSWER */}
                     {isOpen && (
-                      <p className="mt-6 text-muted text-[19px] leading-[1.9]">
+                      <p className="mt-[clamp(10px,2vw,20px)] text-[clamp(13px,1.6vw,19px)] leading-[1.9] text-[#4a4a4a]">
                         {faq.answer}
                       </p>
                     )}
@@ -109,10 +98,12 @@ export default function FAQ() {
               })}
 
             </div>
+
           </div>
+
         </div>
+
       </div>
     </section>
   );
 }
-

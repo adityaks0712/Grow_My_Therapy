@@ -26,25 +26,25 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-[#E6F2F1]">
-      <div className="max-w-7xl mx-auto px-8 py-[220px]">
+    <section className="bg-[#E6F2F1] py-[clamp(80px,10vw,160px)]">
+      <div className="max-w-7xl mx-auto px-[clamp(16px,4vw,48px)]">
 
         {/* HEADING */}
-        <div className="text-center mb-48">
-          <h2 className="text-[72px] leading-[1.05] text-[#1a2e2e]">
+        <div className="text-center mb-[clamp(40px,8vw,100px)]">
+          <h2 className="text-[clamp(26px,5vw,72px)] leading-[1.05] text-[#1a2e2e]">
             My Specialties
           </h2>
         </div>
 
-        {/* SERVICES GRID */}
-        <div className="flex flex-row gap-16">
+        {/* ALWAYS SIDE-BY-SIDE */}
+        <div className="flex gap-[clamp(16px,4vw,48px)]">
 
           {services.map((service, index) => {
-            // Animation directions
+
             const animations = [
-              { x: -120, y: 0 },   // Left → Right
-              { x: 0, y: 120 },    // Bottom → Top
-              { x: 120, y: 0 },    // Right → Left
+              { x: -120, y: 0 },
+              { x: 0, y: 120 },
+              { x: 120, y: 0 },
             ];
 
             const initial = animations[index];
@@ -60,20 +60,20 @@ export default function Services() {
                   flex-1
                   bg-[#E6F2F1]
                   border border-[#1a2e2e]/20
-                  p-16
+                  p-[clamp(16px,4vw,48px)]
                   flex flex-col
                 "
               >
-                <h3 className="text-[26px] mb-8 text-[#1a2e2e]">
+                <h3 className="text-[clamp(16px,2vw,26px)] mb-[clamp(12px,2vw,24px)] text-[#1a2e2e]">
                   {service.title}
                 </h3>
 
-                <p className="text-[17px] leading-[1.9] text-[#4a4a4a] mb-20">
+                <p className="text-[clamp(13px,1.6vw,17px)] leading-[1.9] text-[#4a4a4a] mb-[clamp(20px,4vw,60px)]">
                   {service.description}
                 </p>
 
                 <div className="mt-auto flex justify-center">
-                  <div className="relative w-[260px] h-[260px]">
+                  <div className="relative w-[70%] aspect-square">
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -92,3 +92,4 @@ export default function Services() {
     </section>
   );
 }
+
